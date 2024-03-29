@@ -1,0 +1,24 @@
+.brands {
+  &__section-header {
+    margin-bottom: 15px;
+
+    @include media-Small-min-width {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__wrapper {
+
+    @include media-Small-min-width {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      row-gap: 16px;
+      column-gap: 24px;
+    }
+
+    @include media-Medium-min-width {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      column-gap: 32px;
+    }
+  }
+}

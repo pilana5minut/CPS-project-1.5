@@ -21,7 +21,7 @@
 
 // Large   ≥992px
 @mixin media-Large-min-width() {
-  @media (min-width: 992px) {
+  @media (min-width: 1120px) {
     @content;
   }
 }

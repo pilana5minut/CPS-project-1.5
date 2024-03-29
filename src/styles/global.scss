@@ -2,7 +2,7 @@
 ::after,
 ::before {
   box-sizing: border-box;
-  // @include visible-bound()
+  @include visible-bound()
 }
 
 html {
@@ -11,14 +11,13 @@ html {
 }
 
 body {
-  height: 100%;
   min-width: 320px;
+  height: 100%;
   margin: 0;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  color: var(--color-text);
-  background-color: #a1d2f1;
-  // background-image: url("./assets/svg/cell-body.svg");
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  background-image: url("./assets/svg/cell-body.svg");
 }
 
 a {
@@ -45,6 +44,20 @@ button {
   background-color: transparent;
 }
 
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include media-Medium-min-width {
+    padding: 0 24px;
+  }
+
+  @include media-Large-min-width {
+    padding: 0 32px;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -58,8 +71,8 @@ button {
   overflow: hidden;
 }
 
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
+@include media-Small-min-width {
+  body {
+    background-color: #fff;
+  }
 }
