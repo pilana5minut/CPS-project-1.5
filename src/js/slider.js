@@ -14,7 +14,7 @@ let currentInstance
 
 // Инстанцирует класс Swiper
 function initSlider() {
-  sliderClassToggle()
+  sliderClassToggle.addClassSlider()
 
   currentInstance = new Swiper(`${classNameWrapper}`, {
     modules: [Pagination],
@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
     initSlider()
     console.log("🚥  -- initialization 🚥", currentInstance)
   } else {
-    sliderClassToggle()
+    sliderClassToggle.removeClassSlider()
   }
 });
 
@@ -46,7 +46,7 @@ window.matchMedia(`(max-width: ${initBreakPoint}px)`).addEventListener('change',
   }
   else {
     currentInstance.destroy()
-    sliderClassToggle()
+    sliderClassToggle.removeClassSlider()
     console.log("🚥  -- destroyed 🚥", currentInstance)
   }
 })
