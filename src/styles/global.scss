@@ -2,7 +2,7 @@
 ::after,
 ::before {
   box-sizing: border-box;
-  @include visible-bound()
+  // @include visible-bound()
 }
 
 html {

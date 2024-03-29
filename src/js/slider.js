@@ -1,11 +1,26 @@
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/scss/pagination';
 import sliderClassToggle from './slider-class-toggle.js'
 
 ///////////////////////////////////////////////////////////////////////////////
 
+const optionSlider = {
+  modules: [Pagination, Autoplay],
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+
+  slidesPerView: 1.187,
+  spaceBetween: 16,
+  // autoplay: {
+  //   delay: 1000,
+  // },
+}
 const classNameWrapper = '.brands__slider'
 const initBreakPoint = 576
 let currentInstance
@@ -15,16 +30,7 @@ let currentInstance
 // Инстанцирует класс Swiper
 function initSlider() {
   sliderClassToggle.addClassSlider()
-
-  currentInstance = new Swiper(`${classNameWrapper}`, {
-    modules: [Pagination],
-    direction: 'horizontal',
-    autoHeight: true,
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  })
+  currentInstance = new Swiper(`${classNameWrapper}`, optionSlider)
 }
 
 // Инстанцирует класс Swiper по условию, в момент загрузки.

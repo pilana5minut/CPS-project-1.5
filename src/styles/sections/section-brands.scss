@@ -7,6 +7,14 @@
     }
   }
 
+  &__slider {
+    height: 72px;
+
+    // @include media-Small-min-width {
+    //   height: auto;
+    // }
+  }
+
   &__wrapper {
 
     @include media-Small-min-width {
@@ -21,4 +29,6 @@
       column-gap: 32px;
     }
   }
+
+
 }

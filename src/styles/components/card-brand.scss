@@ -9,4 +9,16 @@
   background-image: url("./assets/svg/icon-arrow-card.svg");
   background-repeat: no-repeat;
   background-position: right 16px center;
+  position: relative;
+
+  @include media-Small-min-width {}
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.card-brand.swiper-slide {
+  display: flex;
 }
