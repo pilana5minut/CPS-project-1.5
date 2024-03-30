@@ -3,14 +3,16 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/scss/pagination';
 import sliderClassToggle from './slider-class-toggle.js'
-import hideSlides from './slider-hide-slides.js'
+import sliderHideSlides from './slider-hide-slides.js'
 
 ///////////////////////////////////////////////////////////////////////////////
 
-export const slideCount = 9 // Не может быть менее 3
 const classNameWrapper = '.brands__slider'
 const initBreakPoint = 576
+const mediaQueryList = window.matchMedia(`(max-width: ${initBreakPoint}px)`)
 let currentInstance
+export const slideCount = 9 // Количество слайдов в мобильной версии (не может быть менее 3)
+
 const optionSlider = {
   modules: [Pagination],
   direction: 'horizontal',
@@ -33,25 +35,22 @@ function initSlider() {
 // Инстанцирует класс Swiper по условию, в момент загрузки.
 window.addEventListener("load", function () {
   if (window.innerWidth <= initBreakPoint) {
-    hideSlides.removeSlides()
+    sliderHideSlides.removeSlides()
     initSlider()
-    // console.log("🚥  -- initialization 🚥", currentInstance)
   } else {
     sliderClassToggle.removeClassSlider()
   }
 });
 
 // Инстанцирует или уничтожает класс Swiper по условию, при наступлении события в объекте MediaQueryList.
-window.matchMedia(`(max-width: ${initBreakPoint}px)`).addEventListener('change', (evt) => {
+mediaQueryList.addEventListener('change', (evt) => {
   if (evt.matches) {
-    hideSlides.removeSlides()
+    sliderHideSlides.removeSlides()
     initSlider()
-    // console.log("🚥  -- initialization 🚥", currentInstance)
   }
   else {
     currentInstance.destroy()
     sliderClassToggle.removeClassSlider()
-    hideSlides.returnSlides()
-    // console.log("🚥  -- destroyed 🚥", currentInstance)
+    sliderHideSlides.returnSlides()
   }
 })

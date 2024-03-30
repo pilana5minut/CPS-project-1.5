@@ -9,10 +9,13 @@
 
   &__slider {
     height: 72px;
+    transition: height 500ms;
 
-    // @include media-Small-min-width {
-    //   height: auto;
-    // }
+    @include media-Small-min-width {
+      min-height: 160px;
+      margin-bottom: 23px;
+      overflow: hidden;
+    }
   }
 
   &__wrapper {
@@ -47,6 +50,26 @@
     }
   }
 
+  .brands__show-all-button {
+    display: none;
 
+    @include media-Small-min-width {
+      padding-left: 30px;
+      display: inline-block;
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: var(--color-text-primary);
+      background-image: url('./assets/svg/icon-arrow-down.svg');
+      background-repeat: no-repeat;
+      background-position: left 7px center;
+      cursor: pointer;
 
+      &--expanded {
+        background-image: url('./assets/svg/icon-arrow-up.svg');
+      }
+    }
+  }
 }
