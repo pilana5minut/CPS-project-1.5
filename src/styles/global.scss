@@ -7,7 +7,7 @@
 
 html {
   height: 100%;
-  background-image: url("./assets/svg/cell-96-160.svg");
+  // background-image: url("./assets/svg/cell-96-160.svg");
 }
 
 body {
@@ -17,7 +17,8 @@ body {
   font-family: var(--font-family);
   font-weight: 400;
   color: var(--color-text-secondary);
-  background-image: url("./assets/svg/cell-body.svg");
+  background-color: var(--color-section-background);
+  // background-image: url("./assets/svg/cell-body.svg");
 }
 
 a {
