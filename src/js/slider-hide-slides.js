@@ -13,14 +13,13 @@ export default {
         element.remove()
       }
     }
-    // console.log("🚥  slidesStorage после УДАЛЕНИЯ слайдов  🚥", slidesStorage.length)
   },
+
   returnSlides: function () {
     for (let i = 0; i < slidesStorage.length; i++) {
       const element = slidesStorage[i];
       sliderWrapper.append(element)
     }
     slidesStorage.length = 0
-    // console.log("🚥  slidesStorage после ВОЗВРАТА слайдов  🚥", slidesStorage.length)
   }
 }
